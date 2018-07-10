@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D267427820F45A5A00EB2BBC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D267427720F45A5A00EB2BBC /* main.cpp */; };
+		D267428020F45AEF00EB2BBC /* ZipCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D267427E20F45AEF00EB2BBC /* ZipCode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		D267427420F45A5A00EB2BBC /* ZipCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ZipCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		D267427720F45A5A00EB2BBC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D267427E20F45AEF00EB2BBC /* ZipCode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ZipCode.cpp; sourceTree = "<group>"; };
+		D267427F20F45AEF00EB2BBC /* ZipCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZipCode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				D267427720F45A5A00EB2BBC /* main.cpp */,
+				D267427E20F45AEF00EB2BBC /* ZipCode.cpp */,
+				D267427F20F45AEF00EB2BBC /* ZipCode.h */,
 			);
 			path = ZipCode;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D267428020F45AEF00EB2BBC /* ZipCode.cpp in Sources */,
 				D267427820F45A5A00EB2BBC /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
