@@ -16,14 +16,15 @@ using namespace std;
 
 ZipCode::ZipCode(int zip) : zipCode(zip) {};
 ZipCode::ZipCode(string bar) {
-    getZipFromBar(bar);
-    zipCode = 12345;
+    zipCode = getZipFromBar(bar);
+    cout << zipCode << endl;
+    
     
 };
 
-void ZipCode::getZipFromBar(string bar){
+int ZipCode::getZipFromBar(string bar){
 //    int finalZip = 0;
-//    int zipArr[5];
+    int zipArr[5];
     
       int zipArrCounter = 0;
       int valueCounter;
@@ -34,44 +35,53 @@ void ZipCode::getZipFromBar(string bar){
         valueCounter = 1;
         for (int j=i; j<=i+4; j++) {
             if(valueCounter == 1){
-                sum += (static_cast<int>(bar[j])*7);
-                cout << sum << endl;
+                sum += static_cast<int>(bar[j]-48)*7;
                 valueCounter++;
             }
             else if(valueCounter == 2){
-                sum += (static_cast<int>(bar[j])*4);
+                sum += (static_cast<int>(bar[j]-48)*4);
    
                 valueCounter++;
             }
             else if(valueCounter == 3){
-                sum += (static_cast<int>(bar[j])*2);
+                sum += (static_cast<int>(bar[j]-48)*2);
 
                 valueCounter++;
             }
             else if(valueCounter == 4){
-                sum += (static_cast<int>(bar[j])*1);
+                sum += (static_cast<int>(bar[j]-48)*1);
                 valueCounter++;
             }
             else if(valueCounter == 5){
-                sum += ((static_cast<int>(bar[j]))*0);
+                sum += ((static_cast<int>(bar[j]-48))*0);
                 valueCounter++;
             }
         }
         cout << sum << endl;
-        if(sum == 11){
+        if (sum == 11){
             sum = 0;
         }
-        zipArrCounter ++;
-        cout <<zipArrCounter <<  endl;
+        zipArr[zipArrCounter] = sum;
+        zipArrCounter++;
+
     }
+    return calculateZipIntFromZipArr(zipArr);
 };
+
+int ZipCode::calculateZipIntFromZipArr(int arr[5]) {
+    int finalZip=0;
+    for (int i=0; i < 5; i++) {
+        finalZip = finalZip * 10 + arr[i];
+    }
+     return finalZip;
+}
 
 int ZipCode::getZipCode() {
     return zipCode;
 };
 
 int main() {
-    ZipCode zip4("100101010011100001100110001");
+    ZipCode zip4("110100101000101011000010011");
     return 0;
     
 };

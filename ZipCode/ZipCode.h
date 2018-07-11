@@ -25,5 +25,7 @@ class ZipCode {
         int zipCode;
         bool CheckBarCode();
         bool CheckZipCode();
-        void getZipFromBar(string bar);
+        int getZipFromBar(string bar);
+        int calculateZipIntFromZipArr(int arr[5]);
+    
 };
