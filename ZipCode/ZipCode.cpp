@@ -17,15 +17,10 @@ using namespace std;
 ZipCode::ZipCode(int zip) : zipCode(zip) {};
 ZipCode::ZipCode(string bar) {
     zipCode = getZipFromBar(bar);
-    cout << zipCode << endl;
-    
-    
 };
 
 int ZipCode::getZipFromBar(string bar){
-//    int finalZip = 0;
-    int zipArr[5];
-    
+      int zipArr[5];
       int zipArrCounter = 0;
       int valueCounter;
       int sum;
@@ -57,7 +52,6 @@ int ZipCode::getZipFromBar(string bar){
                 valueCounter++;
             }
         }
-        cout << sum << endl;
         if (sum == 11){
             sum = 0;
         }
@@ -80,8 +74,32 @@ int ZipCode::getZipCode() {
     return zipCode;
 };
 
+string ZipCode::getBarCode() {
+    getBarFromZip(zipCode);
+    return "Placeholder";
+};
+
+
+
+void ZipCode::getBarFromZip(int zip) {
+    string values[10] = { "11000", "00011", "00101", "00110", "01001", "01010", "01100", "10001", "10010", "10100" };
+    int zipArray[5];
+    int number = zip;
+    for (int i = 4; i >= 0; i--) {
+        zipArray[i] = number % 10;
+        number /= 10;
+    }
+    for (int i = 0; i <5; i++ ){
+
+        cout << values[zipArray[i]] << endl;
+    }
+};
+
 int main() {
     ZipCode zip4("110100101000101011000010011");
+    cout << zip4.getZipCode() << endl;
+    ZipCode zip3(67890);
+    cout << zip3.getBarCode();
     return 0;
     
 };

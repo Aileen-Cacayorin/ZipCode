@@ -10,6 +10,7 @@
 #define ZipCode_h
 #include <string>
 #include <stdio.h>
+#include <iostream>
 
 #endif /* ZipCode_h */
 
@@ -17,9 +18,11 @@ using namespace std;
 
 class ZipCode {
     public:
+        
         ZipCode(int zip);
         ZipCode(string bar);
         int getZipCode();
+        string getBarCode();
         int barValues[5];
     private:
         int zipCode;
@@ -27,5 +30,6 @@ class ZipCode {
         bool CheckZipCode();
         int getZipFromBar(string bar);
         int calculateZipIntFromZipArr(int arr[5]);
+        void getBarFromZip(int zip);
     
 };
