@@ -18,18 +18,15 @@ using namespace std;
 
 class ZipCode {
     public:
-        
         ZipCode(int zip);
         ZipCode(string bar);
         int getZipCode();
         string getBarCode();
-        int barValues[5];
     private:
         int zipCode;
         bool CheckBarCode();
         bool CheckZipCode();
         int getZipFromBar(string bar);
         int calculateZipIntFromZipArr(int arr[5]);
-        void getBarFromZip(int zip);
-    
+        string getBarFromZip(int zip);
 };

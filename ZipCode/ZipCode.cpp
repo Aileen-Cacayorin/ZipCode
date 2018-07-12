@@ -15,6 +15,7 @@ using namespace std;
 
 
 ZipCode::ZipCode(int zip) : zipCode(zip) {};
+
 ZipCode::ZipCode(string bar) {
     zipCode = getZipFromBar(bar);
 };
@@ -75,13 +76,11 @@ int ZipCode::getZipCode() {
 };
 
 string ZipCode::getBarCode() {
-    getBarFromZip(zipCode);
-    return "Placeholder";
+    return getBarFromZip(zipCode);
 };
 
-
-
-void ZipCode::getBarFromZip(int zip) {
+string ZipCode::getBarFromZip(int zip) {
+    string shortBar ="";
     string values[10] = { "11000", "00011", "00101", "00110", "01001", "01010", "01100", "10001", "10010", "10100" };
     int zipArray[5];
     int number = zip;
@@ -90,17 +89,12 @@ void ZipCode::getBarFromZip(int zip) {
         number /= 10;
     }
     for (int i = 0; i <5; i++ ){
-
-        cout << values[zipArray[i]] << endl;
+        shortBar += values[zipArray[i]];
     }
+    string finalBar = "1" + shortBar + "1";
+    return finalBar;
+
 };
 
-int main() {
-    ZipCode zip4("110100101000101011000010011");
-    cout << zip4.getZipCode() << endl;
-    ZipCode zip3(67890);
-    cout << zip3.getBarCode();
-    return 0;
-    
-};
+
 
